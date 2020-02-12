@@ -4,26 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>My First Project</title>
+  
+  <title>@yield('title', 'Learning Larvel 5.8')</title>
+  
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-  <ul class="nav">
-        <li class="nav-item">
-          <a href="/" class="nav-link"> Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="/about" class="nav-link"> About Us</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contact" class="nav-link"> Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a href="/customers" class="nav-link"> Customer List</a>
-        </li>
-  </ul>
+ 
 
   <div class="container">
+
+       @include('nav')
+       {{-- @include('nav', ['username' => 'AbingPJ']) --}}
+
       @yield('content')
   </div>
 

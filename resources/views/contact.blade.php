@@ -1,5 +1,11 @@
 @extends('layout')
 
+{{-- @section('title')
+    Contact Us
+@endsection --}}
+
+@section('title', ' Contact Us')
+
 @section('content')
 
 <h1> Contact Us</h1>
