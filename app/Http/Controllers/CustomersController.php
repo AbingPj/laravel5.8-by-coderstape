@@ -14,6 +14,8 @@ class CustomersController extends Controller
         return view(
             'internals.customers',
             [
+
+                
                 'customers' => $customers,
             ]
         );
