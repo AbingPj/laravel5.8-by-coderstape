@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class CustomersController extends Controller
 {
+
     public function list()
     {
-        
         $activeCustomers = Customer::active()->get();
         $inactiveCustomers = Customer::inactive()->get();
 
@@ -27,11 +27,7 @@ class CustomersController extends Controller
             'active' => 'required'
         ]);
 
-        $customer = new Customer();
-        $customer->name = request('name');
-        $customer->email = request('email');
-        $customer->active = request('active');
-        $customer->save();
+        Customer::create($data);
         
         return back();
      }
