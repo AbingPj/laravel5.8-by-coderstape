@@ -14,6 +14,13 @@ class Customer extends Model
     // ex. if you want to not allowed the email field add on the guearded field array variable
     protected $guarded = [];
 
+    public function getActiveAttribute($attribute){
+        return [
+            0 => 'Inactive',
+            1 => 'Active',
+        ][$attribute];
+    }
+
     public function scopeActive($query)
     {
         return $query->where('active', 1);
