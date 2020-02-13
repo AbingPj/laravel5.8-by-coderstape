@@ -14,41 +14,20 @@
 
     <hr>
      
-    <div class="row">
-        <div class="col-6">
-            <h3>Active Customers</h3>
-            <ul>
-                @foreach ($activeCustomers as $customer)
-                         <li>{{$customer->name}} <span class="text-muted">[{{$customer->company->name}}]</span></li>
-                @endforeach
-            </ul>
-        
+    @foreach ($customers as $customer)
+        <div class="row">
+            <div class="col-2">
+                    {{$customer->id}}
+            </div>
+            <div class="col-4">{{ $customer->name }}</div>
+            <div class="col-4">{{ $customer->company->name }}</div>
+            {{-- <div class="col-2">{{ $customer->active ? 'Active':'Inactive'}}</div> --}}
+            <div class="col-2">{{ $customer->active}}</div>
+          
         </div>
-
-        <div class="col-6">
-            <h3>Inactive Customers</h3>
-            <ul>
-                @foreach ($inactiveCustomers as $customer)
-                         <li>{{$customer->name}} <span class="text-muted">[{{$customer->company->name}}]</span></li>
-                @endforeach
-            </ul>
-        
-        </div>
-    </div>
+    @endforeach
+   
     
     <hr>
-
-    <div class="row">
-        <div class="col-12">
-        @foreach ($companies as $company)
-                <h3>{{$company->name}}</h3>
-                <ul>
-                    @foreach ($company->customers as $customer)
-                        <li>{{$customer->name}}</li>
-                    @endforeach
-                </ul>    
-        @endforeach
-        </div>
-    </div>
 
 @endsection
